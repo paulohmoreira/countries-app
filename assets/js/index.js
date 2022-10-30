@@ -27,11 +27,24 @@ async function getAllCountries() {
     div.appendChild(population);
     div.appendChild(region);
     div.appendChild(capital);
-
     pageCountries.appendChild(div);
   })
 
   console.log(allCountries);
 }
+
+
+
+
+//Capturando texto enquanto ele é digitado no input
+const searchInput = document.querySelector("#search");
+searchInput.addEventListener("keyup", (e) => {
+  let text = searchInput.value;
+  console.log(text);
+})
+
+
+
+
 
 getAllCountries();

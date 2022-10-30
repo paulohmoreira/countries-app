@@ -10,9 +10,10 @@ Funcionalidades:
   - [x] Criar interface para mostrar todos os países.
 
 - [ ] Procurar por um país atráves de um input
-  - [ ] Capturar nome do país
-  - [ ] Enviar nome para API
-  - [ ] Tratar a resposta e apresentar o resultado em uma página
+  - [x] Capturar nome do país digitado
+  - [ ] Comparar com o nome que foi pegado na API
+  - [ ] Mostrar o país encontrado, esconder os outros que não são iguais ao digitado
+
 
 
 - [ ] Filtro por região
@@ -20,4 +21,5 @@ Funcionalidades:
 - [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
 
 - [ ] O resultado da pesquisa tem que ir mudando conforme o usuário vai digitando
+- [ ] Refatorar o design para ficar o mais próximo possível ao design que foi proposto
 - [ ] Alternar tema entre dark e light mode
