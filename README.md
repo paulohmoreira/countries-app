@@ -18,9 +18,10 @@ Funcionalidades:
 
 
 - [ ] Filtro por região
+  - [x] Criar select com as opções
   - [ ] Capturar filtro selecionado
-  - [ ] Editar url da api e fazer tratamento para cada tipo de requisão || Ou fazer o filtrar pelo front-end mesmo
-    - [ ]
+  - [ ] Comparar o filtro selecionado com todos os países
+  - [ ] Mostrar na interface apenas os países da região selecionada
 
 - [ ] Clicar em um país para obter informações mais detalhadas
   - [ ] Mostrar todos os detalhes do pais: Native Name; Population; Region; Sub Region; Capital; Top Level Domain; Currencies; Languages.
