@@ -13,14 +13,20 @@ Funcionalidades:
   - [x] Capturar nome do país digitado
   - [x] Comparar com o nome que foi pegado na API
   - [x] Fazer comparação a cada letra digitada
-  - [ ] Mostrar o país encontrado, esconder os outros que não são iguais ao digitado
-
+  - [x] Mostrar o país encontrado, esconder os outros que não são iguais ao digitado
+  - [x] O resultado da pesquisa tem que ir mudando conforme o usuário vai digitando ou apagando o que for digitado
 
 
 - [ ] Filtro por região
-- [ ] Clicar em um país para obter informações mais detalhadas
-- [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
+  - [ ] Capturar filtro selecionado
+  - [ ] Editar url da api e fazer tratamento para cada tipo de requisão || Ou fazer o filtrar pelo front-end mesmo
+    - [ ]
 
-- [ ] O resultado da pesquisa tem que ir mudando conforme o usuário vai digitando
+- [ ] Clicar em um país para obter informações mais detalhadas
+  - [ ] Mostrar todos os detalhes do pais: Native Name; Population; Region; Sub Region; Capital; Top Level Domain; Currencies; Languages.
+  - [ ] Abaixo dos detalhes mostrar as Border Countries
+  - [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
+
+
 - [ ] Refatorar o design para ficar o mais próximo possível ao design que foi proposto
 - [ ] Alternar tema entre dark e light mode

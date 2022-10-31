@@ -49,9 +49,9 @@ function valueCompare(name) {
         let countrieName = match.textContent || match.innerHTML;
 
         if(countrieName.toUpperCase().indexOf(name) > -1){
-          console.log(countrieContainer[i]);
+          countrieContainer[i].style.display = "";
         } else {
-          // console.log(countrieContainer[i]);
+          countrieContainer[i].style.display = "none";
         }
       }
 
@@ -61,9 +61,6 @@ function valueCompare(name) {
   }
 }
 
-
-
-
 //Capturando texto enquanto ele é digitado no input
 const searchInput = document.querySelector("#search-input");
 
@@ -71,9 +68,6 @@ searchInput.addEventListener("keyup", (e) => {
   let text = searchInput.value.toUpperCase();
   valueCompare(text);
 })
-
-
-
 
 
 getAllCountries();
