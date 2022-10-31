@@ -18,9 +18,12 @@ async function getAllCountries() {
 
     flag.src = allCountries.flags.svg;
     title.innerText = allCountries.name.common;
+    title.classList.add("title");
     population.innerText = allCountries.population;
     region.innerText = allCountries.region;
     capital.innerText = allCountries.capital;
+
+    div.classList.add("countrie-container");
 
     div.appendChild(flag);
     div.appendChild(title);
@@ -33,14 +36,34 @@ async function getAllCountries() {
   console.log(allCountries);
 }
 
+//Comparando input com os países da api
+function valueCompare(name) {
+  const countrieTitle = pageCountries.getElementsByTagName("h2");
+  
+  for (let i = 0; countrieTitle.length; i++) {
+    if (countrieTitle[i] != null) {
+      const countrieName = countrieTitle[i].innerText;
+      if(name === countrieName) {
+        console.log("sucess: " + name);
+      } else {
+        return
+      }
+    } else {
+      return
+    }
+  }
+}
+
 
 
 
 //Capturando texto enquanto ele é digitado no input
-const searchInput = document.querySelector("#search");
+const searchInput = document.querySelector("#search-input");
+
 searchInput.addEventListener("keyup", (e) => {
   let text = searchInput.value;
-  console.log(text);
+  console.log("input: "+ text);
+  valueCompare(text);
 })
 
 
