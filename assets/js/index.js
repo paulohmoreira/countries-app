@@ -73,7 +73,9 @@ function regionCompare(region) {
       if(match) {
         let regionValue = match.textContent || match.innerHTML;
         if(regionValue == region) {
-          console.log(countrieRegion[i]);
+          countrieContainer[i].style.display = "";
+        } else {
+          countrieContainer[i].style.display = "none";
         }
       }
     } else {

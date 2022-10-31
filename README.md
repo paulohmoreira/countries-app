@@ -21,7 +21,8 @@ Funcionalidades:
   - [x] Criar select com as opções
   - [x] Capturar filtro selecionado
   - [x] Comparar o filtro selecionado com todos os países
-  - [ ] Mostrar na interface apenas os países da região selecionada
+  - [x] Mostrar na interface apenas os países da região selecionada
+  - [ ] Corrigir bug: Ao voltar para o default option não está renderizando nenhum páis
 
 - [ ] Clicar em um país para obter informações mais detalhadas
   - [ ] Mostrar todos os detalhes do pais: Native Name; Population; Region; Sub Region; Capital; Top Level Domain; Currencies; Languages.
