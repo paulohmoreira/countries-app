@@ -32,22 +32,29 @@ async function getAllCountries() {
     div.appendChild(capital);
     pageCountries.appendChild(div);
   })
-
-  console.log(allCountries);
 }
 
 //Comparando input com os países da api
 function valueCompare(name) {
   const countrieTitle = pageCountries.getElementsByTagName("h2");
+  const countrieContainer = document.querySelectorAll(".countrie-container");
   
+  // Fazendo a comparação a cada letra digitada no input
   for (let i = 0; countrieTitle.length; i++) {
-    if (countrieTitle[i] != null) {
-      const countrieName = countrieTitle[i].innerText;
-      if(name === countrieName) {
-        console.log("sucess: " + name);
-      } else {
-        return
+    
+    if(countrieTitle[i] != null) {
+      const match = countrieContainer[i].getElementsByTagName("h2")[0];
+
+      if(match) {
+        let countrieName = match.textContent || match.innerHTML;
+
+        if(countrieName.toUpperCase().indexOf(name) > -1){
+          console.log(countrieContainer[i]);
+        } else {
+          // console.log(countrieContainer[i]);
+        }
       }
+
     } else {
       return
     }
@@ -61,8 +68,7 @@ function valueCompare(name) {
 const searchInput = document.querySelector("#search-input");
 
 searchInput.addEventListener("keyup", (e) => {
-  let text = searchInput.value;
-  console.log("input: "+ text);
+  let text = searchInput.value.toUpperCase();
   valueCompare(text);
 })
 

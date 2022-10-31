@@ -12,7 +12,7 @@ Funcionalidades:
 - [ ] Procurar por um país atráves de um input
   - [x] Capturar nome do país digitado
   - [x] Comparar com o nome que foi pegado na API
-  - [ ] Fazer comparação a cada letra digitada
+  - [x] Fazer comparação a cada letra digitada
   - [ ] Mostrar o país encontrado, esconder os outros que não são iguais ao digitado
 
 
