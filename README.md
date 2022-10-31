@@ -27,7 +27,7 @@ Funcionalidades:
 
 - [ ] Clicar em um país para obter informações mais detalhadas
   - [x] Criar página básica que vai mostrar o país de forma detalhada
-  - [ ] Criar botão "voltar para página principal"
+  - [x] Criar botão "voltar para página principal
   - [ ] Mostrar todos os detalhes do pais: Native Name; Population; Region; Sub Region; Capital; Top Level Domain; Currencies; Languages.
   - [ ] Abaixo dos detalhes mostrar as Border Countries
   - [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
