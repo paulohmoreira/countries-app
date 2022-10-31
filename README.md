@@ -9,7 +9,7 @@ Funcionalidades:
     - [x] Cada país deve conter: bandeira; nome; qtd população; região; capital;
   - [x] Criar interface para mostrar todos os países.
 
-- [ ] Procurar por um país atráves de um input
+- [x] Procurar por um país atráves de um input
   - [x] Capturar nome do país digitado
   - [x] Comparar com o nome que foi pegado na API
   - [x] Fazer comparação a cada letra digitada
@@ -22,13 +22,14 @@ Funcionalidades:
   - [x] Capturar filtro selecionado
   - [x] Comparar o filtro selecionado com todos os países
   - [x] Mostrar na interface apenas os países da região selecionada
-  - [ ] Corrigir bug: Ao voltar para o default option não está renderizando nenhum páis
+  - [x] Corrigir bug: Ao voltar para o default option não estava renderizando nenhum páis
+  - [ ] Corrigir bug: Uncaught TypeError: Cannot read properties of undefined (reading 'style') que foi gerado ao resolver a etapa anterior
 
 - [ ] Clicar em um país para obter informações mais detalhadas
   - [ ] Mostrar todos os detalhes do pais: Native Name; Population; Region; Sub Region; Capital; Top Level Domain; Currencies; Languages.
   - [ ] Abaixo dos detalhes mostrar as Border Countries
   - [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
 
-
+- [ ] Quando filtro estiver selecionado, a barra de pesquisa deve funcionar de acordo com o filtro, pesquisando somente países daquele filtro específico
 - [ ] Refatorar o design para ficar o mais próximo possível ao design que foi proposto
 - [ ] Alternar tema entre dark e light mode
