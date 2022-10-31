@@ -26,10 +26,12 @@ Funcionalidades:
   - [ ] Corrigir bug: Uncaught TypeError: Cannot read properties of undefined (reading 'style') que foi gerado ao resolver a etapa anterior
 
 - [ ] Clicar em um país para obter informações mais detalhadas
+  - [x] Criar página básica que vai mostrar o país de forma detalhada
+  - [ ] Criar botão "voltar para página principal"
   - [ ] Mostrar todos os detalhes do pais: Native Name; Population; Region; Sub Region; Capital; Top Level Domain; Currencies; Languages.
   - [ ] Abaixo dos detalhes mostrar as Border Countries
   - [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
 
-- [ ] Quando filtro estiver selecionado, a barra de pesquisa deve funcionar de acordo com o filtro, pesquisando somente países daquele filtro específico
+- [ ] Quando filtro de região estiver selecionado, a barra de pesquisa deve funcionar de acordo com o filtro, pesquisando somente países daquele filtro específico
 - [ ] Refatorar o design para ficar o mais próximo possível ao design que foi proposto
 - [ ] Alternar tema entre dark e light mode
