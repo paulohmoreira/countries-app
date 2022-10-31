@@ -34,7 +34,7 @@ async function getAllCountries() {
   })
 }
 
-//Comparando input com os países da api
+//Comparando input com todos os países pegos da API e renderizados na página inicial
 function valueCompare(name) {
   const countrieTitle = pageCountries.getElementsByTagName("h2");
   const countrieContainer = document.querySelectorAll(".countrie-container");
@@ -61,12 +61,20 @@ function valueCompare(name) {
   }
 }
 
+//Comparando filtro por região com todos os países pegos da API e renderizados na página inicial
+
 //Capturando texto enquanto ele é digitado no input
 const searchInput = document.querySelector("#search-input");
-
 searchInput.addEventListener("keyup", (e) => {
   let text = searchInput.value.toUpperCase();
   valueCompare(text);
+})
+
+//Capturando região selecionada no select
+const filterByRegion = document.getElementById("select");
+filterByRegion.addEventListener("change", (e) => {
+  const regionValue = filterByRegion.options[filterByRegion.selectedIndex].value;
+  console.log(regionValue);
 })
 
 
