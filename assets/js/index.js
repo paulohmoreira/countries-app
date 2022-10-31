@@ -21,6 +21,7 @@ async function getAllCountries() {
     title.classList.add("title");
     population.innerText = allCountries.population;
     region.innerText = allCountries.region;
+    region.classList.add("region");
     capital.innerText = allCountries.capital;
 
     div.classList.add("countrie-container");
@@ -62,6 +63,24 @@ function valueCompare(name) {
 }
 
 //Comparando filtro por região com todos os países pegos da API e renderizados na página inicial
+function regionCompare(region) {
+  const countrieRegion = pageCountries.querySelectorAll(".region");
+  const countrieContainer = document.querySelectorAll(".countrie-container");
+
+  for (let i = 0; countrieRegion.length; i++) {
+    if(countrieRegion[i] != null) {
+      const match = countrieContainer[i].querySelectorAll(".region")[0];
+      if(match) {
+        let regionValue = match.textContent || match.innerHTML;
+        if(regionValue == region) {
+          console.log(countrieRegion[i]);
+        }
+      }
+    } else {
+      return
+    }
+  }
+}
 
 //Capturando texto enquanto ele é digitado no input
 const searchInput = document.querySelector("#search-input");
@@ -75,6 +94,7 @@ const filterByRegion = document.getElementById("select");
 filterByRegion.addEventListener("change", (e) => {
   const regionValue = filterByRegion.options[filterByRegion.selectedIndex].value;
   console.log(regionValue);
+  regionCompare(regionValue);
 })
 
 

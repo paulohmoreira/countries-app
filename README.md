@@ -20,7 +20,7 @@ Funcionalidades:
 - [ ] Filtro por região
   - [x] Criar select com as opções
   - [x] Capturar filtro selecionado
-  - [ ] Comparar o filtro selecionado com todos os países
+  - [x] Comparar o filtro selecionado com todos os países
   - [ ] Mostrar na interface apenas os países da região selecionada
 
 - [ ] Clicar em um país para obter informações mais detalhadas
