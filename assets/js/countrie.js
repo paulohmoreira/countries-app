@@ -1,1 +1,3 @@
-console.log(localStorage.getItem('clickedCountrie'));
+const clickedCountrie = localStorage.getItem('clickedCountrie');
+
+console.log(clickedCountrie);
