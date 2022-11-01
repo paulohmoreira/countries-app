@@ -119,7 +119,6 @@ function getClickedCountrie(){
   const countrieContainer = document.querySelectorAll(".countrie-container");
   countrieContainer.forEach(element => {
     element.addEventListener("click", () =>{
-      console.log(element.children[1].innerHTML);
       localStorage.setItem('clickedCountrie', element.children[1].innerHTML);
       window.location = "countrie.html";
     })
