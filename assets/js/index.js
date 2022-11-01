@@ -25,7 +25,6 @@ async function getAllCountries() {
     capital.innerText = allCountries.capital;
 
     div.classList.add("countrie-container");
-    div.onclick = teste;
 
     div.appendChild(flag);
     div.appendChild(title);
@@ -34,7 +33,26 @@ async function getAllCountries() {
     div.appendChild(capital);
     pageCountries.appendChild(div);
   })
+  // Chamando função para pegar país quando for clicado
+  getClickedCountrie();
 }
+
+//Capturando texto enquanto ele é digitado no input
+const searchInput = document.querySelector("#search-input");
+if(searchInput){
+  searchInput.addEventListener("keyup", () => {
+    let text = searchInput.value.toUpperCase();
+    valueCompare(text);
+  })
+}
+
+//Capturando região selecionada no select
+const filterByRegion = document.getElementById("select");
+filterByRegion.addEventListener("change", () => {
+  const regionValue = filterByRegion.options[filterByRegion.selectedIndex].value;
+  console.log(regionValue);
+  compareRegion(regionValue);
+})
 
 //Comparando input com todos os países pegos da API e renderizados na página inicial
 function valueCompare(name) {
@@ -91,25 +109,22 @@ function compareRegion(region) {
   }
 }
 
-//Capturando texto enquanto ele é digitado no input
-const searchInput = document.querySelector("#search-input");
-searchInput.addEventListener("keyup", (e) => {
-  let text = searchInput.value.toUpperCase();
-  valueCompare(text);
-})
-
-//Capturando região selecionada no select
-const filterByRegion = document.getElementById("select");
-filterByRegion.addEventListener("change", (e) => {
-  const regionValue = filterByRegion.options[filterByRegion.selectedIndex].value;
-  console.log(regionValue);
-  compareRegion(regionValue);
-})
-
 //Linkando a div dos países à página de detalhes
-function teste() {
+function changePage() {
   window.location = "countrie.html";
 }
 
+// Função que pega o país clicado
+function getClickedCountrie(){
+  const countrieContainer = document.querySelectorAll(".countrie-container");
+  countrieContainer.forEach(element => {
+    element.addEventListener("click", () =>{
+      console.log(element);
+    })
+  })
+}
 
-getAllCountries();
+// Immediately invoked function para executar primeiro a função de pegar todos os países da API
+(function () {
+  getAllCountries();
+})();
