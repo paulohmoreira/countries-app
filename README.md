@@ -34,6 +34,7 @@ Funcionalidades:
   - [x] Salvar nome do país clicado no localstorage (ainda não sei um jeito melhor de pegar essa váriavel por outra página)
   - [x] Capturar nome do pais clicado pelo localstorage na outra página que ira fazer outra chamada na API
   - [x] Fazer chamada na API apenas para o país capturado no localstorage
+  - [x] Corrigido bug na busca do país (estava buscando também os que tinham nome parecido)
   - [ ] Capturar todos os detalhes do país selecionado: Native Name; Population; Region; Sub Region; Capital; Top Level Domain; Currencies; Languages.
   - [ ] Mostrar todos os detalhes do pais
   - [ ] Abaixo dos detalhes mostrar as Border Countries
