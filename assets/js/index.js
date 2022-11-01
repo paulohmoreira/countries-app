@@ -25,6 +25,7 @@ async function getAllCountries() {
     capital.innerText = allCountries.capital;
 
     div.classList.add("countrie-container");
+    div.onclick = teste;
 
     div.appendChild(flag);
     div.appendChild(title);
@@ -104,6 +105,11 @@ filterByRegion.addEventListener("change", (e) => {
   console.log(regionValue);
   compareRegion(regionValue);
 })
+
+//Linkando a div dos países à página de detalhes
+function teste() {
+  window.location = "countrie.html";
+}
 
 
 getAllCountries();
