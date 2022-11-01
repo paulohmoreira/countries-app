@@ -28,8 +28,10 @@ Funcionalidades:
 - [ ] Clicar em um país para obter informações mais detalhadas
   - [x] Criar página básica que vai mostrar o país de forma detalhada
   - [x] Criar botão "voltar para página principal
-  - [x] Deixar a div do país 'clicável', e ao clicar direcionar para página countrie
+  - [x] Deixar a div do país 'clicável'
   - [x] Capturar elemento (div countrie-container) que foi clicado
+  - [x] Abrir a página criada ao clicar
+  - [ ] Salvar nome do país clicado no localstorage (ainda não sei um jeito melhor de pegar essa váriavel por outra página)
   - [ ] Capturar todos os detalhes do país selecionado: Native Name; Population; Region; Sub Region; Capital; Top Level Domain; Currencies; Languages.
   - [ ] Mostrar todos os detalhes do pais
   - [ ] Abaixo dos detalhes mostrar as Border Countries

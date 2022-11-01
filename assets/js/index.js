@@ -119,12 +119,13 @@ function getClickedCountrie(){
   const countrieContainer = document.querySelectorAll(".countrie-container");
   countrieContainer.forEach(element => {
     element.addEventListener("click", () =>{
-      console.log(element);
+      console.log(element.children[1].innerHTML);
+      window.location = "countrie.html";
     })
   })
 }
 
-// Immediately invoked function para executar primeiro a função de pegar todos os países da API
+// Executar primeiro a função de pegar todos os países da API
 (function () {
   getAllCountries();
 })();
