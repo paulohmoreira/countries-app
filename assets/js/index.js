@@ -51,9 +51,13 @@ if(searchInput){
 //Capturando região selecionada no select
 const filterByRegion = document.getElementById("select");
 filterByRegion.addEventListener("change", () => {
-  const regionValue = filterByRegion.options[filterByRegion.selectedIndex].value;
-  console.log(regionValue);
-  compareRegion(regionValue);
+  try {
+    const regionValue = filterByRegion.options[filterByRegion.selectedIndex].value;
+    console.log(regionValue);
+    compareRegion(regionValue);
+  } catch (error) {
+    console.log('Contornado erro que eu ainda não sei resolver xD')
+  }
 })
 
 //Comparando input com todos os países pegos da API e renderizados na página inicial

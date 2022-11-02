@@ -17,13 +17,13 @@ Funcionalidades:
   - [x] O resultado da pesquisa tem que ir mudando conforme o usuário vai digitando ou apagando o que for digitado
 
 
-- [ ] Filtro por região
+- [x] Filtro por região
   - [x] Criar select com as opções
   - [x] Capturar filtro selecionado
   - [x] Comparar o filtro selecionado com todos os países
   - [x] Mostrar na interface apenas os países da região selecionada
   - [x] Corrigir bug: Ao voltar para o default option não estava renderizando nenhum páis
-  - [ ] Corrigir bug: Uncaught TypeError: Cannot read properties of undefined (reading 'style') que foi gerado ao resolver a etapa anterior
+  - [x] Corrigir bug: Uncaught TypeError: Cannot read properties of undefined (reading 'style') que foi gerado ao resolver a etapa anterior
 
 - [ ] Clicar em um país para obter informações mais detalhadas
   - [x] Criar página básica que vai mostrar o país de forma detalhada
