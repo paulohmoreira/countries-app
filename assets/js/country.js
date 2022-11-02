@@ -1,11 +1,13 @@
-const clickedCountry = localStorage.getItem("clickedCountry");
+const urlSearchParams = new URLSearchParams(window.location.search);
+const countryName = urlSearchParams.get("name");
+
 const url = "https://restcountries.com/v2/name";
 
-console.log(clickedCountry);
+console.log(countryName);
 
 //Pegar pegar país pelo nome na API
 async function getCountryByName() {
-  const response = await fetch(`${url}/${clickedCountry}?fullText=true`);
+  const response = await fetch(`${url}/${countryName}?fullText=true`);
   const country = await response.json();
   console.log(country);
 
@@ -43,8 +45,6 @@ async function getCountryByName() {
     } catch (error) {
       borders = "<p>This country have no border countries!</p>"
     }
-
-
 
     //Renderizando os dados capturados
     document.querySelector(

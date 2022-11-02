@@ -112,8 +112,8 @@ function compareRegion(region) {
 }
 
 //Linkando a div dos países à página de detalhes
-function changePage() {
-  window.location = "country.html";
+function changePage(name) {
+  window.location = `country.html?name=${name}`;
 }
 
 // Função que pega o país clicado
@@ -121,8 +121,7 @@ function getClickedCountry(){
   const countryContainer = document.querySelectorAll(".country-container");
   countryContainer.forEach(element => {
     element.addEventListener("click", () =>{
-      localStorage.setItem('clickedCountry', element.children[1].innerHTML);
-      window.location = "country.html";
+      changePage(element.children[1].innerHTML);
     })
   })
 }
