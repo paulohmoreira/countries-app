@@ -37,9 +37,9 @@ Funcionalidades:
   - [x] Fazer chamada na API apenas para o país capturado no localstorage
   - [x] Corrigido bug na chamada à API (estava buscando também os que tinham nome parecido)
   - [x] Capturar os seguintes dados do país selecionado: Native Name; Population; Region; Sub Region; Capital; 
-  - [ ] Capturar os dados: Top Level Domain; Currencies; Languages.
+  - [x] Capturar os dados: Top Level Domain; Currencies; Languages.
+  - [x] Renderizar página com os detalhes do pais
   - [ ] Capturar os dados de Borders
-  - [ ] Renderizar página com todos os detalhes do pais
   - [ ] Abaixo dos detalhes mostrar as Border Countries
   - [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
 
