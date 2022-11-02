@@ -1,4 +1,4 @@
-const url = "https://restcountries.com/v3.1/all";
+const url = "https://restcountries.com/v2/all";
 
 const pageCountries = document.querySelector(".container");
 
@@ -6,6 +6,8 @@ const pageCountries = document.querySelector(".container");
 async function getAllCountries() {
   const response = await fetch(url);
   const allCountries = await response.json();
+  console.log(allCountries)
+
 
   allCountries.map((allCountries) => {
     //criando as tags html que vão receber os países
@@ -17,14 +19,14 @@ async function getAllCountries() {
     const capital = document.createElement("p");
 
     flag.src = allCountries.flags.svg;
-    title.innerText = allCountries.name.common;
+    title.innerText = allCountries.name;
     title.classList.add("title");
     population.innerText = allCountries.population;
     region.innerText = allCountries.region;
     region.classList.add("region");
     capital.innerText = allCountries.capital;
 
-    div.classList.add("countrie-container");
+    div.classList.add("country-container");
 
     div.appendChild(flag);
     div.appendChild(title);
@@ -34,7 +36,7 @@ async function getAllCountries() {
     pageCountries.appendChild(div);
   })
   // Chamando função para pegar país quando for clicado
-  getClickedCountrie();
+  getClickedCountry();
 }
 
 //Capturando texto enquanto ele é digitado no input
@@ -56,22 +58,22 @@ filterByRegion.addEventListener("change", () => {
 
 //Comparando input com todos os países pegos da API e renderizados na página inicial
 function valueCompare(name) {
-  const countrieTitle = pageCountries.getElementsByTagName("h2");
-  const countrieContainer = document.querySelectorAll(".countrie-container");
+  const countryTitle = pageCountries.getElementsByTagName("h2");
+  const countryContainer = document.querySelectorAll(".country-container");
   
   // Fazendo a comparação a cada letra digitada no input
-  for (let i = 0; countrieTitle.length; i++) {
+  for (let i = 0; countryTitle.length; i++) {
     
-    if(countrieTitle[i] != null) {
-      const match = countrieContainer[i].getElementsByTagName("h2")[0];
+    if(countryTitle[i] != null) {
+      const match = countryContainer[i].getElementsByTagName("h2")[0];
 
       if(match) {
-        let countrieName = match.textContent || match.innerHTML;
+        let countryName = match.textContent || match.innerHTML;
 
-        if(countrieName.toUpperCase().indexOf(name) > -1){
-          countrieContainer[i].style.display = "";
+        if(countryName.toUpperCase().indexOf(name) > -1){
+          countryContainer[i].style.display = "";
         } else {
-          countrieContainer[i].style.display = "none";
+          countryContainer[i].style.display = "none";
         }
       }
 
@@ -83,23 +85,23 @@ function valueCompare(name) {
 
 //Comparando filtro por região com todos os países pegos da API e renderizados na página inicial
 function compareRegion(region) {
-  const countrieRegion = pageCountries.querySelectorAll(".region");
-  const countrieContainer = document.querySelectorAll(".countrie-container");
+  const countryRegion = pageCountries.querySelectorAll(".region");
+  const countryContainer = document.querySelectorAll(".country-container");
 
   if(!region) {
-    for(let j = 0; countrieRegion.length; j++) {
-        countrieContainer[j].style.display = "";
+    for(let j = 0; countryRegion.length; j++) {
+        countryContainer[j].style.display = "";
     }
   } else {
-    for (let i = 0; countrieRegion.length; i++) {
-      if(countrieRegion[i] != null) {
-        const match = countrieContainer[i].querySelectorAll(".region")[0];
+    for (let i = 0; countryRegion.length; i++) {
+      if(countryRegion[i] != null) {
+        const match = countryContainer[i].querySelectorAll(".region")[0];
         if(match) {
           let regionValue = match.textContent || match.innerHTML;
           if(regionValue == region) {
-            countrieContainer[i].style.display = "";
+            countryContainer[i].style.display = "";
           } else {
-            countrieContainer[i].style.display = "none";
+            countryContainer[i].style.display = "none";
           }
         }
       } else {
@@ -111,16 +113,16 @@ function compareRegion(region) {
 
 //Linkando a div dos países à página de detalhes
 function changePage() {
-  window.location = "countrie.html";
+  window.location = "country.html";
 }
 
 // Função que pega o país clicado
-function getClickedCountrie(){
-  const countrieContainer = document.querySelectorAll(".countrie-container");
-  countrieContainer.forEach(element => {
+function getClickedCountry(){
+  const countryContainer = document.querySelectorAll(".country-container");
+  countryContainer.forEach(element => {
     element.addEventListener("click", () =>{
-      localStorage.setItem('clickedCountrie', element.children[1].innerHTML);
-      window.location = "countrie.html";
+      localStorage.setItem('clickedCountry', element.children[1].innerHTML);
+      window.location = "country.html";
     })
   })
 }
