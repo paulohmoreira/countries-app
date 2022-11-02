@@ -70,7 +70,7 @@ async function getCountryByName() {
             </p>
          </div>
         </div>
-        <div class="borders" id="borders">Border Countries:</div>
+        <div class="borders" id="borders">Border Countries:${borders}</div>
     </div>`;
   });
 }

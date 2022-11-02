@@ -40,7 +40,7 @@ Funcionalidades:
   - [x] Capturar os dados: Top Level Domain; Currencies; Languages.
   - [x] Renderizar página com os detalhes do pais
   - [x] Capturar os dados de Borders
-  - [ ] Abaixo dos detalhes mostrar as Border Countries
+  - [x] Abaixo dos detalhes mostrar as Border Countries
   - [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
 
 - [ ] Quando filtro de região estiver selecionado, a barra de pesquisa deve funcionar de acordo com o filtro, pesquisando somente países daquele filtro específico
