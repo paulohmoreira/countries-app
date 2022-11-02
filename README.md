@@ -25,7 +25,7 @@ Funcionalidades:
   - [x] Corrigir bug: Ao voltar para o default option não estava renderizando nenhum páis
   - [x] Corrigir bug: Uncaught TypeError: Cannot read properties of undefined (reading 'style') que foi gerado ao resolver a etapa anterior
 
-- [ ] Clicar em um país para obter informações mais detalhadas
+- [x] Clicar em um país para obter informações mais detalhadas
   - [x] Criar página básica que vai mostrar o país de forma detalhada
   - [x] Criar botão "voltar para página principal
   - [x] Deixar a div do país 'clicável'
@@ -41,8 +41,9 @@ Funcionalidades:
   - [x] Capturar os dados de Borders
   - [x] Abaixo dos detalhes mostrar as Border Countries
   - [x] Pegar o país pela url e retirar a função que fazia pelo localstorage
-  - [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
+  - [x] Clicar nos países da página de detalhes deve direcionar para o mesmo
 
 - [ ] Quando filtro de região estiver selecionado, a barra de pesquisa deve funcionar de acordo com o filtro, pesquisando somente países daquele filtro específico
+
 - [ ] Refatorar o design para ficar o mais próximo possível ao design que foi proposto
 - [ ] Alternar tema entre dark e light mode
