@@ -31,15 +31,33 @@ async function getCountryByName() {
     subRegion.innerText = country.subregion;
     capital.innerText = country.capital;
 
-    console.log(country.flags.svg)
-    console.log(country.name)
-    console.log(country.nativeName)
-    console.log(country.population)
-    console.log(country.region)
-    console.log(country.subregion)
-    console.log(country.capital)
+    //loop para pegar todos os itens do array topLevelDomain
+    country.topLevelDomain.map((element) => {
+      topLevelDomain.innerHTML += `<span>${element}</span>`
+    })
+    console.log(topLevelDomain.innerHTML);
+
+    //loop para pegar todos os itens do array currencies
+    country.currencies.map((element) => {
+      currencies.innerHTML += `<span>${element.name}</span>`
+    })
+    console.log(currencies.innerHTML);
+
+    //loop para pegar todos os itens do array currencies
+    country.languages.map((element) => {
+      languages.innerHTML += `<span>${element.name}</span>`
+    })
+    console.log(languages.innerHTML);
+
+
+    console.log(country.flags.svg);
+    console.log(country.name);
+    console.log(country.nativeName);
+    console.log(country.population);
+    console.log(country.region);
+    console.log(country.subregion);
+    console.log(country.capital);
   })
 }
 
 getCountryByName();
-
