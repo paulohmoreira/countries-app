@@ -12,6 +12,7 @@ async function getCountryByName() {
   let topLevelDomain = [];
   let currencies = [];
   let languages = [];
+  let borders = [];
 
   country.map((country) => {
     
@@ -32,6 +33,17 @@ async function getCountryByName() {
       languages += `<span>${element.name}</span>`;
     });
     console.log(languages);
+
+    //loop para pegar os borders
+    try {
+      country.borders.map((element) => {
+        borders += `<button>${element}</button>`;
+      });
+      console.log(borders);    
+    } catch (error) {
+      borders = "<p>This country have no border countries!</p>"
+    }
+
 
 
     //Renderizando os dados capturados

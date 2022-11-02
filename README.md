@@ -39,7 +39,7 @@ Funcionalidades:
   - [x] Capturar os seguintes dados do país selecionado: Native Name; Population; Region; Sub Region; Capital; 
   - [x] Capturar os dados: Top Level Domain; Currencies; Languages.
   - [x] Renderizar página com os detalhes do pais
-  - [ ] Capturar os dados de Borders
+  - [x] Capturar os dados de Borders
   - [ ] Abaixo dos detalhes mostrar as Border Countries
   - [ ] Clicar nos países da página de detalhes deve direcionar para o mesmo
 
