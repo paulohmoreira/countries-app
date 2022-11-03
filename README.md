@@ -48,7 +48,7 @@ Funcionalidades:
 - [ ] Refatorar o design para ficar o mais próximo possível ao design que foi proposto
   - [ ] Mobile
     - [x] Criar e estilizar o header
-    - [ ] Melhorar design do input
+    - [x] Melhorar design do input
     - [ ] Melhorar design do select
     - [ ] Melhorar design dos cards dos países
     - [ ] Melhorar desing do botão back (pág country.html)
