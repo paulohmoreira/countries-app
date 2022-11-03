@@ -1,15 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@import "theme-toggle.css";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
 }
 
 img {
   width: 300px;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+nav h1 {
+  font-weight: 800;
+}
+
+nav h1, .theme-toggle > span {
+  font-size: 0.875rem;
+}
+
+.theme-toggle > span {
+  font-weight: 600;
+}
+
+
 
 .container {
   display: flex;

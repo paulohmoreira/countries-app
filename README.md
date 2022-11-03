@@ -46,4 +46,14 @@ Funcionalidades:
 - [ ] Quando filtro de região estiver selecionado, a barra de pesquisa deve funcionar de acordo com o filtro, pesquisando somente países daquele filtro específico
 
 - [ ] Refatorar o design para ficar o mais próximo possível ao design que foi proposto
+  - [ ] Mobile
+    - [x] Criar e estilizar o header
+    - [ ] Melhorar design do input
+    - [ ] Melhorar design do select
+    - [ ] Melhorar design dos cards dos países
+    - [ ] Melhorar desing do botão back (pág country.html)
+    - [ ] Melhorar design da pág country.html
+  - [ ] Desktop
+    - [ ] Ajustar layout desktop com as media queries
+
 - [ ] Alternar tema entre dark e light mode
