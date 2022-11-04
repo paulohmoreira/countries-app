@@ -79,7 +79,7 @@ main {
   width: 200px;
 }
 
-.search input, .filter-region select {
+.search input, .filter-region select, .country-container {
   border: none;
   -webkit-box-shadow: 0px 0px 5px 0px var(--shadow);
   box-shadow: 0px 0px 5px 0px var(--shadow);
@@ -90,9 +90,36 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: 3rem;
+  padding-top: 1rem;
 }
 
 .country-container {
   cursor: pointer;
+  background-color: var(--elements);
+}
+
+.country-container img {
+  border-radius: 5px;;
+}
+
+.country-details {
+  font-weight: 600;
+  padding: 2rem 1.5rem;
+}
+
+.country-details h2 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.country-details p {
+  font-weight: 600;
+  margin: 0.3rem 0;
+}
+
+.country-details span {
+  margin-right: 10px;
+  font-weight: 400;
 }

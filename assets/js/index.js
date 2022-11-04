@@ -13,26 +13,38 @@ async function getAllCountries() {
     //criando as tags html que vão receber os países
     const div = document.createElement("div");
     const flag = document.createElement("img");
+    const divCountryDetails = document.createElement("div");
     const title = document.createElement("h2");
     const population = document.createElement("p");
+    const spanPopulation = document.createElement("span");
     const region = document.createElement("p");
+    const spanRegion = document.createElement("span");
     const capital = document.createElement("p");
+    const spanCapital = document.createElement("span");
 
     flag.src = allCountries.flags.svg;
     title.innerText = allCountries.name;
     title.classList.add("title");
-    population.innerText = allCountries.population;
-    region.innerText = allCountries.region;
-    region.classList.add("region");
-    capital.innerText = allCountries.capital;
+    population.innerText = ("Population: ");
+    spanPopulation.innerText = allCountries.population;
+    region.innerText = ("Region: ");
+    spanRegion.innerText = allCountries.region;
+    spanRegion.classList.add("region");
+    capital.innerText = ("Capital: ");
+    spanCapital.innerText = allCountries.capital;
 
     div.classList.add("country-container");
+    divCountryDetails.classList.add("country-details");
 
     div.appendChild(flag);
-    div.appendChild(title);
-    div.appendChild(population);
-    div.appendChild(region);
-    div.appendChild(capital);
+    divCountryDetails.appendChild(title);
+    population.appendChild(spanPopulation);
+    divCountryDetails.appendChild(population);
+    region.appendChild(spanRegion);
+    divCountryDetails.appendChild(region);
+    capital.appendChild(spanCapital);
+    divCountryDetails.appendChild(capital);
+    div.appendChild(divCountryDetails);
     pageCountries.appendChild(div);
   })
   // Chamando função para pegar país quando for clicado
