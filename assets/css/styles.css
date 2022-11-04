@@ -19,6 +19,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 30px 20px;
+  background-color: var(--elements);
 }
 
 nav h1 {
@@ -33,7 +34,7 @@ nav h1, .theme-toggle > span, input, .filter-region select {
   font-weight: 600;
 }
 
-main {
+body {
   background-color: var(--background-color);
 }
 
@@ -79,7 +80,7 @@ main {
   width: 200px;
 }
 
-.search input, .filter-region select, .country-container {
+.search input, .filter-region select, .country-container, .borders button {
   border: none;
   -webkit-box-shadow: 0px 0px 5px 0px var(--shadow);
   box-shadow: 0px 0px 5px 0px var(--shadow);
@@ -125,7 +126,7 @@ main {
 }
 
 .wrapper {
-  width: 90vw;
+  width: 300px;
   margin: auto;
 }
 
@@ -144,4 +145,47 @@ a > button {
 
 a > button i {
   margin-right: .5rem;
+}
+
+.flex-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.country-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.country-text h3 {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+p .strong {
+  font-weight: 600;
+}
+
+p.details {
+  margin: .3rem 0;
+}
+
+.right, .border-container {
+  margin-top: 2rem;
+}
+
+.borders {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+  gap: .4rem;
+  margin-top: .5rem;
+}
+
+.borders button {
+  cursor: pointer;
+  padding: .3rem;
+  background-color: var(--elements);
 }

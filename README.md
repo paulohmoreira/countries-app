@@ -52,7 +52,8 @@ Funcionalidades:
     - [x] Melhorar design do select
     - [x] Melhorar design dos cards dos países
     - [x] Melhorar desing do botão back (pág country.html)
-    - [ ] Melhorar design da pág country.html
+    - [x] Melhorar design da pág country.html
+    - [ ] Adicionar box-shadow no header das duas páginas
   - [ ] Desktop
     - [ ] Ajustar layout desktop com as media queries
 

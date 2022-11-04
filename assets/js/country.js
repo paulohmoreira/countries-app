@@ -4,13 +4,10 @@ const countryName = urlSearchParams.get("name");
 const url = "https://restcountries.com/v2/name";
 const alphaUrl = "https://restcountries.com/v2/alpha";
 
-console.log(countryName);
-
 //Pegar pegar país pelo nome na API
 async function getCountryByName(url) {
   const response = await fetch(url);
   const country = await response.json();
-  console.log(country);
 
   let topLevelDomain = [];
   let currencies = [];
@@ -22,52 +19,53 @@ async function getCountryByName(url) {
     country.topLevelDomain.map((element) => {
       topLevelDomain += `<span>${element}</span>`;
     });
-    console.log(topLevelDomain);
 
     //loop para pegar todos os itens do array currencies
     country.currencies.map((element) => {
       currencies += `<span>${element.name}</span>`;
     });
-    console.log(currencies);
 
     //loop para pegar todos os itens do array currencies
     country.languages.map((element) => {
       languages += `<span>${element.name}</span>`;
     });
-    console.log(languages);
 
     //loop para pegar os borders
     try {
       country.borders.map((element) => {
-        borders += `<button class="btn">${element}</button>`;
+        borders += ` <button class="btn">${element}</button> `;
       });
-      console.log(borders);
     } catch (error) {
       borders = "<p>This country have no border countries!</p>";
     }
 
     //Renderizando os dados capturados
-    document.querySelector(".container").innerHTML = `
+    document.querySelector(".flex-container").innerHTML = `
     <img src="${country.flags.svg}" alt="country Image">
     <div class="country-text">
       <h3>${country.name}</h3>
       <div class="info">
         <div class="left">
-           <p><span>Native Name: </span> ${country.nativeName}</p>
-           <p><span>Population: </span>${country.population}</p>
-           <p><span>Region: </span>${country.region}</p>
-           <p><span>Sub Region: </span>${country.subregion}</p>
-           <p><span>Capital: </span>${country.capital}</p>
+           <p class="details"><span class="strong">Native Name: </span> ${country.nativeName}</p>
+           <p class="details"><span class="strong">Population: </span>${country.population}</p>
+           <p class="details"><span class="strong">Region: </span>${country.region}</p>
+           <p class="details"><span class="strong">Sub Region: </span>${country.subregion}</p>
+           <p class="details"><span class="strong">Capital: </span>${country.capital}</p>
          </div>
          <div class="right">
-            <p><span>Top Level Domain: </span>${topLevelDomain}</p>
-            <p><span>Currencies: </span>${currencies}</p>
-            <p class="languages">
-              <span>Languages: ${languages}</span>
+            <p class="details"><span class="strong">Top Level Domain: </span>${topLevelDomain}</p>
+            <p class="details"><span class="strong">Currencies: </span>${currencies}</p>
+            <p class="languages details">
+              <span class="strong">Languages: </span>${languages}
             </p>
          </div>
         </div>
-        <div class="borders" id="borders">Border Countries:${borders}</div>
+        <div class="border-container">
+          <h5>Border Countries:</h5>
+          <div class="borders" id="borders">
+            ${borders}
+          </div>
+        </div>
     </div>`;
   });
   getClickedBorder();
@@ -114,7 +112,7 @@ function getCountryByAlphaCode(url) {
       }
 
       //Renderizando os dados capturados
-      document.querySelector(".container").innerHTML = `
+      document.querySelector(".flex-container").innerHTML = `
       <img src="${country.flags.svg}" alt="country Image">
       <div class="country-text">
         <h3>${country.name}</h3>
@@ -143,7 +141,7 @@ function getCountryByAlphaCode(url) {
 
 function getClickedBorder() {
   const button = document.querySelectorAll("button");
-  const divContainer = document.querySelector(".container");
+  const divContainer = document.querySelector(".flex-container");
   button.forEach((element) => {
     element.addEventListener("click", () => {
       divContainer.innerHTML = "";
