@@ -118,21 +118,26 @@ function getCountryByAlphaCode(url) {
         <h3>${country.name}</h3>
         <div class="info">
           <div class="left">
-             <p><span>Native Name: </span> ${country.nativeName}</p>
-             <p><span>Population: </span>${country.population}</p>
-             <p><span>Region: </span>${country.region}</p>
-             <p><span>Sub Region: </span>${country.subregion}</p>
-             <p><span>Capital: </span>${country.capital}</p>
+             <p class="details"><span class="strong">Native Name: </span> ${country.nativeName}</p>
+             <p class="details"><span class="strong">Population: </span>${country.population}</p>
+             <p class="details"><span class="strong">Region: </span>${country.region}</p>
+             <p class="details"><span class="strong">Sub Region: </span>${country.subregion}</p>
+             <p class="details"><span class="strong">Capital: </span>${country.capital}</p>
            </div>
            <div class="right">
-              <p><span>Top Level Domain: </span>${topLevelDomain}</p>
-              <p><span>Currencies: </span>${currencies}</p>
-              <p class="languages">
-                <span>Languages: ${languages}</span>
+              <p class="details"><span class="strong">Top Level Domain: </span>${topLevelDomain}</p>
+              <p class="details"><span class="strong">Currencies: </span>${currencies}</p>
+              <p class="languages details">
+                <span class="strong">Languages: ${languages}</span>
               </p>
            </div>
           </div>
-          <div class="borders" id="borders">Border Countries:${borders}</div>
+          <div class="border-container">
+          <h5>Border Countries:</h5>
+          <div class="borders" id="borders">
+            ${borders}
+          </div>
+        </div>
       </div>`;
 
       getClickedBorder();
