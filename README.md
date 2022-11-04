@@ -56,6 +56,6 @@ Funcionalidades:
     - [x] Adicionar box-shadow no header das duas páginas
   - [ ] Desktop
     - [x] Ajustar layout página principal
-    - [ ] Ajustar layout página do país detalhada
+    - [x] Ajustar layout página do país detalhada
 
 - [ ] Alternar tema entre dark e light mode

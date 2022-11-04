@@ -6,7 +6,6 @@ const pageCountries = document.querySelector(".container");
 async function getAllCountries() {
   const response = await fetch(url);
   const allCountries = await response.json();
-  console.log(allCountries)
 
 
   allCountries.map((allCountries) => {
@@ -65,7 +64,6 @@ const filterByRegion = document.getElementById("select");
 filterByRegion.addEventListener("change", () => {
   try {
     const regionValue = filterByRegion.options[filterByRegion.selectedIndex].value;
-    console.log(regionValue);
     compareRegion(regionValue);
   } catch (error) {
     console.log('Contornado erro que eu ainda não sei resolver xD')

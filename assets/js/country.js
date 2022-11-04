@@ -17,17 +17,17 @@ async function getCountryByName(url) {
   country.map((country) => {
     //loop para pegar todos os itens do array topLevelDomain
     country.topLevelDomain.map((element) => {
-      topLevelDomain += `<span>${element}</span>`;
+      topLevelDomain += `<span class="inline-block">${element}</span>`;
     });
 
     //loop para pegar todos os itens do array currencies
     country.currencies.map((element) => {
-      currencies += `<span>${element.name}</span>`;
+      currencies += `<span class="inline-block">${element.name}</span>`;
     });
 
     //loop para pegar todos os itens do array currencies
     country.languages.map((element) => {
-      languages += `<span>${element.name}</span>`;
+      languages += `<span class="inline-block">${element.name}</span>`;
     });
 
     //loop para pegar os borders
@@ -76,7 +76,6 @@ function getCountryByAlphaCode(url) {
   fetch(url)
     .then((response) => response.json())
     .then((country) => {
-      console.log(country);
 
       let topLevelDomain = [];
       let currencies = [];
@@ -85,28 +84,25 @@ function getCountryByAlphaCode(url) {
 
       //loop para pegar todos os itens do array topLevelDomain
       country.topLevelDomain.map((element) => {
-        topLevelDomain += `<span>${element}</span>`;
+        topLevelDomain += `<span class="inline-block">${element}</span>`;
       });
-      console.log(topLevelDomain);
 
       //loop para pegar todos os itens do array currencies
       country.currencies.map((element) => {
-        currencies += `<span>${element.name}</span>`;
+        currencies += `<span class="inline-block">${element.name}</span>`;
       });
-      console.log(currencies);
 
-      //loop para pegar todos os itens do array currencies
+      //loop para pegar todos os itens do array languages
       country.languages.map((element) => {
-        languages += `<span>${element.name}</span>`;
+        languages += `<span class="inline-block">${element.name}</span>`;
       });
-      console.log(languages);
+      
 
       //loop para pegar os borders
       try {
         country.borders.map((element) => {
           borders += `<button class="btn">${element}</button>`;
         });
-        console.log(borders);
       } catch (error) {
         borders = "<p>This country have no border countries!</p>";
       }
@@ -128,7 +124,7 @@ function getCountryByAlphaCode(url) {
               <p class="details"><span class="strong">Top Level Domain: </span>${topLevelDomain}</p>
               <p class="details"><span class="strong">Currencies: </span>${currencies}</p>
               <p class="languages details">
-                <span class="strong">Languages: ${languages}</span>
+                <span class="strong">Languages: </span>${languages}
               </p>
            </div>
           </div>
