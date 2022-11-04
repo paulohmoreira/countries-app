@@ -51,7 +51,7 @@ Funcionalidades:
     - [x] Melhorar design do input
     - [x] Melhorar design do select
     - [x] Melhorar design dos cards dos países
-    - [ ] Melhorar desing do botão back (pág country.html)
+    - [x] Melhorar desing do botão back (pág country.html)
     - [ ] Melhorar design da pág country.html
   - [ ] Desktop
     - [ ] Ajustar layout desktop com as media queries

@@ -137,7 +137,7 @@ function getClickedCountry(){
   const countryContainer = document.querySelectorAll(".country-container");
   countryContainer.forEach(element => {
     element.addEventListener("click", () =>{
-      changePage(element.children[1].innerHTML);
+      changePage(element.children[1].children[0].innerHTML);
     })
   })
 }
