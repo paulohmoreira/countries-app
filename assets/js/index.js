@@ -7,6 +7,8 @@ async function getAllCountries() {
   const response = await fetch(url);
   const allCountries = await response.json();
 
+  console.log(allCountries)
+
 
   allCountries.map((allCountries) => {
     //criando as tags html que vão receber os países
@@ -80,6 +82,7 @@ function valueCompare(name) {
     
     if(countryTitle[i] != null) {
       const match = countryContainer[i].getElementsByTagName("h2")[0];
+      console.log(match)
 
       if(match) {
         let countryName = match.textContent || match.innerHTML;
@@ -104,12 +107,13 @@ function compareRegion(region) {
 
   if(!region) {
     for(let j = 0; countryRegion.length; j++) {
-        countryContainer[j].style.display = "";
+      countryContainer[j].style.display = "";
     }
   } else {
     for (let i = 0; countryRegion.length; i++) {
       if(countryRegion[i] != null) {
         const match = countryContainer[i].querySelectorAll(".region")[0];
+
         if(match) {
           let regionValue = match.textContent || match.innerHTML;
           if(regionValue == region) {

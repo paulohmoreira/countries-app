@@ -1,12 +1,6 @@
 const btnTheme = document.querySelector(".theme-toggle");
-const span = document.getElementById("theme-switcher");
-
-console.log(btnTheme);
-console.log(span);
-console.log(span.innerText);
 
 btnTheme.addEventListener("click", function () {
-  console.log('oi');
   if(localStorage.getItem('theme') == 'light'){
     setTheme('dark');
   } else {
