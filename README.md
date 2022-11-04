@@ -43,9 +43,7 @@ Funcionalidades:
   - [x] Pegar o país pela url e retirar a função que fazia pelo localstorage
   - [x] Clicar nos países da página de detalhes deve direcionar para o mesmo
 
-- [ ] Quando filtro de região estiver selecionado, a barra de pesquisa deve funcionar de acordo com o filtro, pesquisando somente países daquele filtro específico
-
-- [ ] Refatorar o design para ficar o mais próximo possível ao design que foi proposto
+- [x] Refatorar o design para ficar o mais próximo possível ao design que foi proposto
   - [x] Finalizado layout Mobile
     - [x] Criar e estilizar o header
     - [x] Melhorar design do input
@@ -54,8 +52,9 @@ Funcionalidades:
     - [x] Melhorar desing do botão back (pág country.html)
     - [x] Melhorar design da pág country.html
     - [x] Adicionar box-shadow no header das duas páginas
-  - [ ] Desktop
+  - [x] Desktop
     - [x] Ajustar layout página principal
     - [x] Ajustar layout página do país detalhada
 
-- [ ] Alternar tema entre dark e light mode
+- [x] Alternar tema entre dark e light mode
+- [ ] Quando filtro de região estiver selecionado, a barra de pesquisa deve funcionar de acordo com o filtro, pesquisando somente países daquele filtro específico

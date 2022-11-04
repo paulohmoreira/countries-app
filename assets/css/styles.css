@@ -83,6 +83,7 @@ body {
   margin-left: 20px;
   padding: .9rem .5rem;
   width: 200px;
+  background-color: var(--elements);
 }
 
 .search input, .filter-region select, .country-container, .borders button {
@@ -199,6 +200,10 @@ p.details {
 .inline-block {
   display: inline-block;
   padding-right: .5rem;
+}
+
+.theme-toggle {
+  cursor: pointer;
 }
 
 @media (min-width: 767.9px) {
