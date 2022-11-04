@@ -1,8 +1,28 @@
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
 # Countries App
 
-Integração com a API REST Countries para pegar dados de países e exibir em uma página.
+<h1 align="center">
+  <br>
+  <br>
+  <img src="/assets/image/countrie-demo.gif" alt="Demo">
+  <br>
+  <br>
+</h1>
 
-Funcionalidades:
+# Sobre o projeto
+
+Integração com a API REST Countries para pegar dados de países e exibir em uma página, o objetivo é colocar em prática conhecimentos já aprendidos e também me desafiar com novas funcionalidades. O projeto foi construído com HTML, CSS e JS. Pude colocar em prática meus conhecimentos em responvidade, flexbox, grid layout, classes, manipulação de elementos, LocalStorage, função IIFE, função assíncronas método map, forEach e etc. A ideia do projeto eu peguei no site [Frontendmentor](https://www.frontendmentor.io/)
+
+
+# Deploy
+
+[Link para demonstração](https://paulohmoreira.github.io/countries-app/)
+
+
+# Funcionalidades:
 
 - [x] Ver todos os países da API na página principal 
   - [x] Mostrar todos os países na página principal
