@@ -49,7 +49,7 @@ Funcionalidades:
   - [ ] Mobile
     - [x] Criar e estilizar o header
     - [x] Melhorar design do input
-    - [ ] Melhorar design do select
+    - [x] Melhorar design do select
     - [ ] Melhorar design dos cards dos países
     - [ ] Melhorar desing do botão back (pág country.html)
     - [ ] Melhorar design da pág country.html

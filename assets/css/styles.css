@@ -25,7 +25,7 @@ nav h1 {
   font-weight: 800;
 }
 
-nav h1, .theme-toggle > span, input {
+nav h1, .theme-toggle > span, input, .filter-region select {
   font-size: 0.875rem;
 }
 
@@ -70,15 +70,20 @@ main {
   width: 100%;
   padding: 1rem;
   text-align: center;
-  border-radius: 5px;
-  border: none;
-  -webkit-box-shadow: 0px 0px 5px 0px var(--shadow);
-  box-shadow: 0px 0px 5px 0px var(--shadow);
 }
 
 .filter-region select {
   align-items: flex-start;
   margin-left: 20px;
+  padding: .9rem .5rem;
+  width: 200px;
+}
+
+.search input, .filter-region select {
+  border: none;
+  -webkit-box-shadow: 0px 0px 5px 0px var(--shadow);
+  box-shadow: 0px 0px 5px 0px var(--shadow);
+  border-radius: 5px;
 }
 
 .container {
