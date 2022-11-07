@@ -1,63 +1,114 @@
-const urlSearchParams = new URLSearchParams(window.location.search);
-const countryName = urlSearchParams.get("name");
+// Extrai a lógica de fazer a requisição dos "countries" em uma função (princípio da responsabilidade única). 
+async function getCountry(url) {
+  try {
+    const response = await fetch(url);
+    const country = await response.json();
 
-const url = "https://restcountries.com/v2/name";
-const alphaUrl = "https://restcountries.com/v2/alpha";
+    if (country.constructor.name === "Array") return country[0];
 
-//Pegar pegar país pelo nome na API
-async function getCountryByName(url) {
-  const response = await fetch(url);
-  const country = await response.json();
+    return country;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
+// Mesma coisa aqui -> (princípio da responsabilidade única)
+function countryInfoElementsHandler(country) {
   let topLevelDomain = [];
   let currencies = [];
   let languages = [];
   let borders = [];
 
-  country.map((country) => {
-    //loop para pegar todos os itens do array topLevelDomain
-    country.topLevelDomain.map((element) => {
-      topLevelDomain += `<span class="inline-block">${element}</span>`;
+  country.topLevelDomain.map((element) => {
+    topLevelDomain += `<span class="inline-block">${element}</span>`;
+  });
+
+  country.currencies.map((element) => {
+    currencies += `<span class="inline-block">${element.name}</span>`;
+  });
+
+  country.languages.map((element) => {
+    languages += `<span class="inline-block">${element.name}</span>`;
+  });
+
+  // TRY/CATCH é mais utilizando em requisições com API's. Nesse trecho abaixo,
+  // o mais correto apenas garantir que existe valores no "country.borders"
+  if (country?.borders?.length) {
+    country?.borders?.map((element) => {
+      borders += ` <button class="btn">${element}</button> `;
     });
+  } else {
+    borders = "<p>This country have no border countries!</p>";
+  }
 
-    //loop para pegar todos os itens do array currencies
-    country.currencies.map((element) => {
-      currencies += `<span class="inline-block">${element.name}</span>`;
-    });
+  return {
+    topLevelDomain,
+    currencies,
+    languages,
+    borders,
+  }
+}
 
-    //loop para pegar todos os itens do array currencies
-    country.languages.map((element) => {
-      languages += `<span class="inline-block">${element.name}</span>`;
-    });
+function renderCountryDocument(country) {
+  const {
+    topLevelDomain,
+    currencies,
+    languages,
+    borders,
+  } = countryInfoElementsHandler(country);
 
-    //loop para pegar os borders
-    try {
-      country.borders.map((element) => {
-        borders += ` <button class="btn">${element}</button> `;
-      });
-    } catch (error) {
-      borders = "<p>This country have no border countries!</p>";
-    }
+  // Isso aqui talvez fiquei mais dificil de pegar a visão, mas a intenção é deixar dinâmico a geração dos dados do "country". 
+  // Isso melhora a "manutenibilidade", pois, se eu quiser adicionar/remover algum item, é só modificar o objeto.
+  const leftData = [
+    {
+      label: "Native Name",
+      value: country.nativeName,
+    },
+    {
+      label: "Population",
+      value: country.population,
+    },
+    {
+      label: "Region",
+      value: country.region,
+    },
+    {
+      label: "Sub Region",
+      value: country.subregion,
+    },
+    {
+      label: "Capital",
+      value: country.capital,
+    },
+  ];
 
-    //Renderizando os dados capturados
-    document.querySelector(".flex-container").innerHTML = `
+  // O mesmo aqui.
+  const rigthData = [
+    {
+      label: "Top Level Domain",
+      value: topLevelDomain,
+    },
+    {
+      label: "Currencies",
+      value: currencies,
+    },
+    {
+      label: "Languages",
+      value: languages,
+    },
+  ];
+
+  // Note que agora os dados do "country" agora estão dinâmicos. Dessa forma, também evitei repetição de código "html".
+  document.querySelector(".flex-container").innerHTML = `
     <img src="${country.flags.svg}" alt="country Image">
     <div class="country-text">
       <h3>${country.name}</h3>
       <div class="info">
         <div class="left">
-           <p class="details"><span class="strong">Native Name: </span> ${country.nativeName}</p>
-           <p class="details"><span class="strong">Population: </span>${country.population}</p>
-           <p class="details"><span class="strong">Region: </span>${country.region}</p>
-           <p class="details"><span class="strong">Sub Region: </span>${country.subregion}</p>
-           <p class="details"><span class="strong">Capital: </span>${country.capital}</p>
+          ${leftData.map((detail) => `<p class="details"><span class="strong">${detail.label}: </span> ${detail.value}</p>`).join("")}
          </div>
          <div class="right">
-            <p class="details"><span class="strong">Top Level Domain: </span>${topLevelDomain}</p>
-            <p class="details"><span class="strong">Currencies: </span>${currencies}</p>
-            <p class="languages details">
-              <span class="strong">Languages: </span>${languages}
-            </p>
+          ${rigthData.map((detail) => `<p class="details"><span class="strong">${detail.label}: </span> ${detail.value}</p>`).join("")}
          </div>
         </div>
         <div class="border-container">
@@ -67,91 +118,38 @@ async function getCountryByName(url) {
           </div>
         </div>
     </div>`;
-  });
+}
+
+// Bom, essa função aqui ficou sendo a responsável por lidar com toda a lógica do "country". É a principal desse fluxo.
+// Note que agora, ela consegue lidar tanto com "getCountryByName" e "getCountryByAlphaCode", 
+// evitando repetição de código (DRY - Dont Repeat Yourself)
+async function countryHandler(url) {
+  const country = await getCountry(url);
+
+  renderCountryDocument(country);
   getClickedBorder();
 }
 
-//Pegar pegar país pelo Alpha code na API
-function getCountryByAlphaCode(url) {
-  fetch(url)
-    .then((response) => response.json())
-    .then((country) => {
-
-      let topLevelDomain = [];
-      let currencies = [];
-      let languages = [];
-      let borders = [];
-
-      //loop para pegar todos os itens do array topLevelDomain
-      country.topLevelDomain.map((element) => {
-        topLevelDomain += `<span class="inline-block">${element}</span>`;
-      });
-
-      //loop para pegar todos os itens do array currencies
-      country.currencies.map((element) => {
-        currencies += `<span class="inline-block">${element.name}</span>`;
-      });
-
-      //loop para pegar todos os itens do array languages
-      country.languages.map((element) => {
-        languages += `<span class="inline-block">${element.name}</span>`;
-      });
-      
-
-      //loop para pegar os borders
-      try {
-        country.borders.map((element) => {
-          borders += `<button class="btn">${element}</button>`;
-        });
-      } catch (error) {
-        borders = "<p>This country have no border countries!</p>";
-      }
-
-      //Renderizando os dados capturados
-      document.querySelector(".flex-container").innerHTML = `
-      <img src="${country.flags.svg}" alt="country Image">
-      <div class="country-text">
-        <h3>${country.name}</h3>
-        <div class="info">
-          <div class="left">
-             <p class="details"><span class="strong">Native Name: </span> ${country.nativeName}</p>
-             <p class="details"><span class="strong">Population: </span>${country.population}</p>
-             <p class="details"><span class="strong">Region: </span>${country.region}</p>
-             <p class="details"><span class="strong">Sub Region: </span>${country.subregion}</p>
-             <p class="details"><span class="strong">Capital: </span>${country.capital}</p>
-           </div>
-           <div class="right">
-              <p class="details"><span class="strong">Top Level Domain: </span>${topLevelDomain}</p>
-              <p class="details"><span class="strong">Currencies: </span>${currencies}</p>
-              <p class="languages details">
-                <span class="strong">Languages: </span>${languages}
-              </p>
-           </div>
-          </div>
-          <div class="border-container">
-          <h5>Border Countries:</h5>
-          <div class="borders" id="borders">
-            ${borders}
-          </div>
-        </div>
-      </div>`;
-
-      getClickedBorder();
-    });
-}
 
 function getClickedBorder() {
   const button = document.querySelectorAll("button");
   const divContainer = document.querySelector(".flex-container");
+  // Aqui eu internalizei essas variáveis [baseAlphaUrl] que só são usadas neste escopo da função.
+  const baseAlphaUrl = "https://restcountries.com/v2/alpha";
+
   button.forEach((element) => {
     element.addEventListener("click", () => {
       divContainer.innerHTML = "";
-      getCountryByAlphaCode(`${alphaUrl}/${element.innerText}`);
+      countryHandler(`${baseAlphaUrl}/${element.innerText}`);
     });
   });
 }
 
-// Assegurando que essa função executara primeiro
 (function () {
-  getCountryByName(`${url}/${countryName}?fullText=true`);
+  const baseUrl = "https://restcountries.com/v2/name";
+  // Aqui também eu internalizei essas variáveis [urlSearchParams e countryName] que só são usadas neste escopo da função.
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const countryName = urlSearchParams.get("name");
+
+  countryHandler(`${baseUrl}/${countryName}?fullText=true`);
 })();
