@@ -251,9 +251,9 @@ p.details {
     margin-bottom: 2rem;
   }
 
-  .country-container {
+  /* .country-container {
     max-width: 300px;
-  }
+  } */
 
   .wrapper {
     width: 90vw;
@@ -293,6 +293,10 @@ p.details {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+  }
+
+  .index-wrapper {
+    width: 95vw;
   }
 }
 
