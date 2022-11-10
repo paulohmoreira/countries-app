@@ -10,10 +10,6 @@
   color: var(--text);
 }
 
-img {
-  width: 300px;
-}
-
 header {
   background-color: var(--elements);
   -webkit-box-shadow: 0px 0px 5px 0px var(--shadow);
@@ -106,12 +102,21 @@ body {
   background-color: var(--elements);
 }
 
-.country-container img {
-  border-radius: 5px;;
+.image-container {
+  width: 320px;
+  height: 200px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .country-details {
   font-weight: 600;
+  max-width: 320px;
   padding: 2rem 1.5rem;
 }
 

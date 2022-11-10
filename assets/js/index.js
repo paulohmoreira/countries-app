@@ -13,6 +13,7 @@ async function getAllCountries() {
   allCountries.map((allCountries) => {
     //criando as tags html que vão receber os países
     const div = document.createElement("div");
+    const imgDiv = document.createElement("div");
     const flag = document.createElement("img");
     const divCountryDetails = document.createElement("div");
     const title = document.createElement("h2");
@@ -35,9 +36,11 @@ async function getAllCountries() {
     spanCapital.innerText = allCountries.capital;
 
     div.classList.add("country-container");
+    imgDiv.classList.add("image-container");
     divCountryDetails.classList.add("country-details");
 
-    div.appendChild(flag);
+
+    imgDiv.appendChild(flag);
     divCountryDetails.appendChild(title);
     population.appendChild(spanPopulation);
     divCountryDetails.appendChild(population);
@@ -45,6 +48,7 @@ async function getAllCountries() {
     divCountryDetails.appendChild(region);
     capital.appendChild(spanCapital);
     divCountryDetails.appendChild(capital);
+    div.appendChild(imgDiv);
     div.appendChild(divCountryDetails);
     pageCountries.appendChild(div);
   })
