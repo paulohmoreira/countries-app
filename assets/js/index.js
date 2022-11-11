@@ -25,6 +25,7 @@ async function getAllCountries() {
     const spanCapital = document.createElement("span");
 
     flag.src = allCountries.flags.svg;
+    flag.setAttribute("alt", `Bandeira do país ${allCountries.name}`);
     title.innerText = allCountries.name;
     title.classList.add("title");
     population.innerText = ("Population: ");
